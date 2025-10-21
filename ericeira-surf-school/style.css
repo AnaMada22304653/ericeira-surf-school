@@ -1,0 +1,41 @@
+:root {
+  --azul-mar: #0077cc;
+  --areia: #fdf6e3;
+  --branco: #ffffff;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --fonte: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte);
+  background: linear-gradient(to bottom, #e0f7fa, #fdf6e3);
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--branco);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px var(--sombra);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  margin-left: 1rem;
+  font-weight: 600;
+  color: var(--azul-mar);
+}
+
+.lang-switch {
+  margin-left: 
