@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ericeira Surf School</title>
+  <meta name="description" content="Aulas de surf em Ericeira para viajantes jovens. Aprende a surfar com instrutores certificados!" />
+  <meta property="og:title" content="Ericeira Surf School" />
+  <meta property="og:description" content="Surf experiences in Ericeira for international travellers aged 18–30. Catch your first wave!" />
+  <link rel="canonical" href="https://ericeirasurfschool.com/index.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header role="banner">
+    <div><strong>Ericeira Surf School</strong></div>
+    <nav role="navigation">
+      <a href="#aulas">Aulas</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#map">Mapa</a>
+      <a href="#ugc">Partilha</a>
+      <select class="lang-switch" aria-label="Language switch" onchange="switchLang(this.value)">
+        <option value="pt">PT</option>
+        <option value="en">EN</option>
+      </select>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="hero">
+      <h1 id="hero-title">Apanha a tua primeira onda 🌊</h1>
+      <p id="hero-desc">Aprende a surfar em Ericeira com instrutores certificados e vibes incríveis.</p>
+    </section>
+
+    <section class="section" id="aulas" aria-label="Aulas de Surf">
+      <h2 id="aulas-title">As nossas aulas</h2>
+      <div class="grid" id="aulas-grid"></div>
+    </section>
+
+    <section class="quiz" id="quiz" aria-label="Surf Quiz">
+      <h2 id="quiz-title">Qual é a tua vibe de surf?</h2>
+      <label for="q1">Preferes ondas suaves ou desafiantes?</label>
+      <select id="q1">
+        <option>Suaves</option>
+        <option>Desafiantes</option>
+      </select>
+    </section>
+
+    <section class="map" id="map" aria-label="Localização">
+      <h2 id="map-title">Onde estamos</h2>
+      <iframe title="Google Map of Ericeira Surf School" src="https://www.google.com/maps/embed?..."></iframe>
+    </section>
+
+    <section class="ugc" id="ugc" aria-label="Partilha a tua experiência">
+      <h2 id="ugc-title">Partilha a tua experiência</h2>
+      <textarea aria-label="Comentário do utilizador"></textarea><br>
+      <button onclick="alert('Obrigado por partilhar!')">Enviar</button>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2025 Ericeira Surf School
+  </footer>
+
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>Usamos cookies para melhorar a experiência. We use cookies to improve your experience.</p>
+    <button onclick="acceptCookies()">Aceitar / Accept</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-mar: #0077cc;
+    --areia: #fdf6e3;
+    --branco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --fonte: 'Montserrat', sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--fonte);
+    background: linear-gradient(to bottom, #e0f7fa, #fdf6e3);
+    color: #222;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--branco);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px var(--sombra);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    margin-left: 1rem;
+    font-weight: 600;
+    color: var(--azul-mar);
+  }
+
+  .lang-switch {
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+
+  .hero {
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: var(--branco);
+    padding: 6rem 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section {
+    padding: 3rem 2rem;
+    background: var(--areia);
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--azul-mar);
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--sombra);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--azul-mar);
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-content .tags {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .quiz, .ugc, .map {
+    padding: 2rem;
+    background: var(--branco);
+  }
+
+  .ugc textarea {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-family: var(--fonte);
+  }
+
+  .ugc button {
+    padding: 0.5rem 1rem;
+    background: var(--azul-mar);
+    color: var(--branco);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--azul-mar);
+    color: var(--branco);
+    font-size: 0.8rem;
+  }
+
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    padding: 1rem;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 5px var(--sombra);
+    text-align: center;
+    z-index: 9999;
+  }
+
+  #cookie-banner button {
+    padding: 0.5rem 1rem;
+    background: var(--azul-mar);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+</style>
+
